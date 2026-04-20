@@ -22,69 +22,51 @@
 
         .float-scroll-box {
             float: right;
-            width: 220px;
-            height: 280px;
+            width: 200px;
+            height: 250px; 
             border: 5px solid #76b900; 
             margin-left: 20px;
-            margin-bottom: 10px;
-            padding: 15px;
-            overflow-y: scroll; 
-            font-size: 28px;
+            padding: 10px;
+            overflow-y: scroll !important; 
+            font-size: 24px;
             line-height: 1.2;
-            color: #333;
-            box-sizing: border-box; 
+            background-color: #fff;
         }
 
         .float-scroll-box::-webkit-scrollbar {
-            width: 25px;
+            width: 20px !important;
+            display: block !important;
         }
 
         .float-scroll-box::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-            border-left: 1px solid #ccc;
+            background: #f1f1f1 !important;
+            border-left: 1px solid #ddd;
         }
         .float-scroll-box::-webkit-scrollbar-thumb {
-            background: #c1c1c1; /* 圖片中的灰色 */
+            background: #c1c1c1 !important; /* 灰色的拉桿 */
             border: 2px solid #f1f1f1; /* 邊距感 */
         }
 
-        .float-scroll-box::-webkit-scrollbar-thumb:hover {
-            background: #a8a8a8;
-        }
-
-        .float-scroll-box::-webkit-scrollbar-button:single-button {
-            background-color: #f1f1f1;
-            display: block;
-            border-left: 1px solid #ccc;
-            height: 20px;
+        .float-scroll-box::-webkit-scrollbar-button {
+            display: block !important;
+            background-color: #eee;
             background-size: 10px;
             background-repeat: no-repeat;
             background-position: center;
-        }
-        
-        .float-scroll-box::-webkit-scrollbar-button:single-button:vertical:decrement {
-            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='grey'><polygon points='50,0 0,100 100,100'/></svg>");
+            height: 15px;
         }
 
-        .float-scroll-box::-webkit-scrollbar-button:single-button:vertical:increment {
-            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='grey'><polygon points='0,0 100,0 50,100'/></svg>");
-        }
         .inline-highlight {
             display: inline-block;
-            background-color: #ffff00; 
-            border: 2px solid #0000ff; 
-            padding: 2px 8px;
-            margin: 0 2px;
-            font-size: 32px; 
-            vertical-align: middle;
+            background-color: yellow;
+            border: 2px solid blue;
+            padding: 2px 5px;
+            font-size: 28px;
         }
 
         .content-text {
-            font-size: 26px;
-            line-height: 1.4;
-            color: #000;
-            text-align: left;
-            margin: 0;
+            font-size: 24px;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -102,16 +84,26 @@
         A float div with overflow auto.
     </div>
 
-    <p class="content-text">
-        (Just long sentence.) Let me not to the marriage of true minds Admit impediments. 
-        <span class="inline-highlight">Love</span> is not love Which alters when it alteration finds, 
-        Or bends with the remover to remove: O, no! it is an ever-fix'ed mark, That looks on tempests 
-        and is never shaken; It is the star to every wand'ring bark, Whose worth's unknown, 
-        although his heighth be taken. <span class="inline-highlight">Love's</span> not 
-        Time's fool, though rosy lips and cheeks Within his bending sickle's compass come; 
-        <span class="inline-highlight">Love</span> alters not with his brief hours and weeks, 
-        But bears it out even to the edge of doom: If this be error and upon me proved, 
-        I never writ, nor no man ever loved.
+   <p class="content-text">
+Just long sentence.) Let me not to the marriage of true minds
+Admit impediments.
+< span class="inline-highlight">Love</span> is not love Which alters
+when it
+alteration finds,
+Or bends with the remover to remove: O, no! it is an ever-fix'ed
+mark, That looks on tempests
+and is never shaken; It is the star to every wand'ring bark, Whose
+worth's
+unknown,
+although his heighth be taken. ‹span class="inline-
+highlight ">Love's</span> not
+Time's fool, though rosy lips and cheeks Within his bending
+sickle's compass come;
+‹span class="inline-highlight">Love</span> alters not with his
+brief hours and weeks,
+But bears it out even to the edge of doom: If this be error and
+upon me proved,
+I never writ, nor no man ever loved.
     </p>
 </div>
 

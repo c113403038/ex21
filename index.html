@@ -20,8 +20,6 @@
             box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
             overflow: hidden; 
         }
-
-        /* 右側浮動區塊 */
         .float-scroll-box {
             float: right;
             width: 220px;
@@ -46,15 +44,13 @@
         }
 
         .float-scroll-box::-webkit-scrollbar-thumb {
-            background: #c1c1c1; /* 圖片中的灰色 */
-            border: 2px solid #f1f1f1; /* 邊距感 */
+            background: #c1c1c1; 
+            border: 2px solid #f1f1f1; 
         }
 
         .float-scroll-box::-webkit-scrollbar-thumb:hover {
             background: #a8a8a8;
         }
-
-        /* 5. 加上上下箭頭按鈕 (選配，現代瀏覽器預設較難自訂箭頭形狀，但可設定背景) */
         .float-scroll-box::-webkit-scrollbar-button:single-button {
             background-color: #f1f1f1;
             display: block;

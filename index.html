@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <style>
-    
         body {
             font-family: "Times New Roman", serif;
             background-color: #e0e0e0;
@@ -20,6 +19,7 @@
             box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
             overflow: hidden; 
         }
+
         .float-scroll-box {
             float: right;
             width: 220px;
@@ -36,21 +36,22 @@
         }
 
         .float-scroll-box::-webkit-scrollbar {
-            width: 25px; /*         }
+            width: 25px;
+        }
 
         .float-scroll-box::-webkit-scrollbar-track {
             background: #f1f1f1; 
             border-left: 1px solid #ccc;
         }
-
         .float-scroll-box::-webkit-scrollbar-thumb {
-            background: #c1c1c1; 
-            border: 2px solid #f1f1f1; 
+            background: #c1c1c1; /* 圖片中的灰色 */
+            border: 2px solid #f1f1f1; /* 邊距感 */
         }
 
         .float-scroll-box::-webkit-scrollbar-thumb:hover {
             background: #a8a8a8;
         }
+
         .float-scroll-box::-webkit-scrollbar-button:single-button {
             background-color: #f1f1f1;
             display: block;
@@ -68,7 +69,6 @@
         .float-scroll-box::-webkit-scrollbar-button:single-button:vertical:increment {
             background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='grey'><polygon points='0,0 100,0 50,100'/></svg>");
         }
-
         .inline-highlight {
             display: inline-block;
             background-color: #ffff00; 

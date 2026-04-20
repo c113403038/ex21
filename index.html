@@ -2,109 +2,118 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
+    <title>CSS Layout Replicate</title>
     <style>
-        body {
-            font-family: "Times New Roman", serif;
-            background-color: #e0e0e0;
+        /* 整體容器樣式 */
+        .page-container {
+            padding: 50px;
+            background-color: #f0f0f0;
             display: flex;
             justify-content: center;
-            padding-top: 50px;
         }
 
-        .main-container {
-            background-color: white;
-            width: 850px;
-            padding: 40px;
+        .content-box {
+            width: 750px;
+            background: white;
+            padding: 30px;
             border: 1px solid #ccc;
-            box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
-            overflow: hidden; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            font-family: "Times New Roman", serif;
+            font-size: 22px;
+            line-height: 1.4;
+            color: #333;
         }
 
-        .float-scroll-box {
+        /* 右側綠色浮動框 */
+        .float-div {
             float: right;
-            width: 200px;
-            height: 250px; 
-            border: 5px solid #76b900; 
+            width: 180px;
+            height: 220px;
+            border: 5px solid #7eb642; /* 綠色粗框 */
             margin-left: 20px;
-            padding: 10px;
-            overflow-y: scroll !important; 
-            font-size: 24px;
-            line-height: 1.2;
-            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            overflow-y: auto; /* 強制出現垂直捲軸 */
+            background: white;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            box-sizing: border-box;
         }
 
-        .float-scroll-box::-webkit-scrollbar {
-            width: 20px !important;
-            display: block !important;
+        /* 黃色 inline-block 樣式 */
+        .inline-block-box {
+            display: inline-block;
+            background-color: #ffff00;
+            border: 1px solid #0000ff;
+            padding: 2px 10px;
+            margin: 0 2px;
+            line-height: 1;
         }
 
-        .float-scroll-box::-webkit-scrollbar-track {
-            background: #f1f1f1 !important;
-            border-left: 1px solid #ddd;
-        }
-        .float-scroll-box::-webkit-scrollbar-thumb {
-            background: #c1c1c1 !important; /* 灰色的拉桿 */
-            border: 2px solid #f1f1f1; /* 邊距感 */
+        /* 自定義捲軸樣式 (針對 Webkit 瀏覽器如 Chrome/Edge) */
+        
+        /* 捲軸整體寬度 */
+        .float-div::-webkit-scrollbar {
+            width: 16px;
         }
 
-        .float-scroll-box::-webkit-scrollbar-button {
-            display: block !important;
+        /* 捲軸軌道 */
+        .float-div::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-left: 1px solid #ccc;
+        }
+
+        /* 捲軸滑塊 (中間拉的部分) */
+        .float-div::-webkit-scrollbar-thumb {
+            background: #cccccc;
+            border: 1px solid #999;
+        }
+
+        .float-div::-webkit-scrollbar-thumb:hover {
+            background: #b3b3b3;
+        }
+
+        /* 捲軸上下按鈕 (箭頭) */
+        .float-div::-webkit-scrollbar-button:single-button {
             background-color: #eee;
+            display: block;
+            border: 1px solid #ccc;
+            height: 16px;
             background-size: 10px;
             background-repeat: no-repeat;
             background-position: center;
-            height: 15px;
         }
 
-        .inline-highlight {
-            display: inline-block;
-            background-color: yellow;
-            border: 2px solid blue;
-            padding: 2px 5px;
-            font-size: 28px;
+        /* 上箭頭圖示 */
+        .float-div::-webkit-scrollbar-button:single-button:vertical:decrement {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='grey'><polygon points='50,20 80,80 20,80'/></svg>");
         }
 
-        .content-text {
-            font-size: 24px;
-            line-height: 1.5;
+        /* 下箭頭圖示 */
+        .float-div::-webkit-scrollbar-button:single-button:vertical:increment {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='grey'><polygon points='50,80 80,20 20,20'/></svg>");
         }
+
     </style>
 </head>
 <body>
 
-<div class="main-container">
-    <div class="float-scroll-box">
-        A float div with overflow auto. <br>
-        A float div with overflow auto. <br>
-        A float div with overflow auto. <br>
-        A float div with overflow auto. <br>
-        A float div with overflow auto. <br>
-        A float div with overflow auto. <br>
-        A float div with overflow auto. <br>
-        A float div with overflow auto.
-    </div>
+<div class="page-container">
+    <div class="content-box">
+        <div class="float-div">
+            A float div with overflow auto. A float div with overflow auto. A float div with overflow auto.
+        </div>
 
-   <p class="content-text">
-Just long sentence.) Let me not to the marriage of true minds
-Admit impediments.
-< span class="inline-highlight">Love</span> is not love Which alters
-when it
-alteration finds,
-Or bends with the remover to remove: O, no! it is an ever-fix'ed
-mark, That looks on tempests
-and is never shaken; It is the star to every wand'ring bark, Whose
-worth's
-unknown,
-although his heighth be taken. ‹span class="inline-
-highlight ">Love's</span> not
-Time's fool, though rosy lips and cheeks Within his bending
-sickle's compass come;
-‹span class="inline-highlight">Love</span> alters not with his
-brief hours and weeks,
-But bears it out even to the edge of doom: If this be error and
-upon me proved,
-I never writ, nor no man ever loved.
-    </p>
+        (Just long sentence.) Let me not to the marriage of true minds Admit impediments. 
+        <span class="inline-block-box">Love</span> is not love Which alters when it alteration finds, 
+        Or bends with the remover to remove: O, no! it is an ever-fix'ed mark, That looks on tempests 
+        and is never shaken; It is the star to every wand'ring bark, Whose worth's unknown, 
+        although his heighth be taken. <span class="inline-block-box">Love's</span> not Time's fool, 
+        though rosy lips and cheeks Within his bending sickle's compass come; 
+        <span class="inline-block-box">Love</span> alters not with his brief hours and weeks, 
+        But bears it out even to the edge of doom: If this be error and upon me proved, 
+        I never writ, nor no man ever loved.
+    </div>
 </div>
 
 </body>
